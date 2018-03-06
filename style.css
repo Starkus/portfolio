@@ -118,7 +118,7 @@ h1 {
 }
 
 #about-left > div {
-    width: 450px;
+    max-width: 400px;
     margin-left: auto;
 }
 
@@ -133,7 +133,7 @@ h1 {
 }
 
 #about-right > div {
-    width: 450px;
+    max-width: 400px;
     margin-right: auto;
 }
 
@@ -158,13 +158,18 @@ h1 {
     flex: none;
 }
 
+.about ul {
+    margin-right: 40px;
+}
+
 
 /* Sections */
 .section {
     font-family: 'Open Sans', sans-serif;
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto 0 auto;
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .section-back {
@@ -203,12 +208,27 @@ h1 {
     margin-bottom: 50px;
 }
 
+.section-back.alt1 {
+    background-color: #dd878c;
+}
+
+.section.alt1 {
+    color: white;
+}
+
+.section.alt1 h2 {
+    color: #eee;
+}
+
+.section.alt1 .little-divisor {
+    background-color: white;
+}
+
 .skill-bar {
     text-transform: uppercase;
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: bold;
-    color: #aaa;
-    -webkit-text-stroke: 0.3px;
+    color: #888;
     letter-spacing: 1px;
 }
 
@@ -225,4 +245,8 @@ h1 {
 
 .bar-back {
     background-color: #eee;
+}
+
+.skill-bar.alt1 > .bar-fill {
+    background-color: #37b0ac;
 }

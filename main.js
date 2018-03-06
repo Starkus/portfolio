@@ -37,7 +37,17 @@ var setUpModal = function() {
     }
 
 
-    /* Hex tiles animations and events */
+    /* Hex tiles events */
+    for (var hex of document.querySelectorAll('.hex')) {
+        /* On click, open modal */
+        hex.onclick = function() {
+            modal.style.display = "block";
+            modalImg.attr("src", this.dataset.image);
+            console.log(this.dataset.image);
+        }
+    }
+
+    /* Hex tiles animations */
     $(window).scroll(function() {
         const size = 150.0;
         const shift = 100.0;
@@ -56,17 +66,9 @@ var setUpModal = function() {
             /* A sort of "bubble" function for the scale */
             var scale = Math.min(top, bot) / (winHeight / 2);
             scale = Math.sin(scale * 1.57);
-            scale = Math.min(1, scale + 0.6);
+            scale = Math.min(1, scale + 0.3);
 
             hex.style.transform = 'rotate(120deg) scale(' + scale + ')';
-            console.log(hex.style.transform.scale);
-
-            /* On click, open modal */
-            hex.onclick = () => {
-                console.log(modal);
-                modal.style.display = "block";
-                modalImg.src = "/images/thumbnail-clio.jpg";
-            }
         }
     })
 }

@@ -10,8 +10,20 @@
         -ms-transform: rotate(120deg);
             transform: rotate(120deg);
     margin: -21px 10px -22px 10px;
+    cursor: pointer;
+}
+/*
+.hex:hover {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
+@keyframes zoom {
+    from{transform: rotate(120deg) scale(1)}
+    to  {transform: rotate(120deg) scale(1.05)}
+}
+*/
 .hex-1 {
     overflow: hidden;
     width: 100%;

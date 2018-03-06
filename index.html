@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="hexes.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="modal.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <!-- Google Fonts -->
@@ -23,8 +24,8 @@
             <span>
                 <ul>
                     <li>Home</li>
-                    <li>Gamedev</li>
-                    <li>Resume</li>
+                    <li><a onclick="document.getElementById('gamedev').scrollIntoView({behavior: 'smooth'});">Gamedev</a></li>
+                    <li><a onclick="document.getElementById('renders').scrollIntoView({behavior: 'smooth'});">Renders</a></li>
                 </ul>
             </span>
             <span class="separator"></span>
@@ -39,7 +40,7 @@
             <span class="separator"></span>
             <span>
                 <ul>
-                    <li class="li-right">Portfolio</li>
+                    <li class="li-right"><a onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'});">Resume</a></li>
                     <li class="li-right">Blog</li>
                     <li class="li-right">Contact</li>
                 </ul>
@@ -74,10 +75,10 @@
         </span>
     </div>
     <div class="section-back">
-        <div class="section" style="max-width: unset;">
+        <div class="section" id="renders" style="max-width: unset;">
             <h1>Renders</h1>
             <div class="little-divisor"></div>
-            <h2>I am a kid with a passion for Computer Science</h2>
+            <h2><i>The section with pretty pictures</i></h2>
             <div class="hex-row">
                 <span class="hex-row-fill"></span>
                 <div class="hex">
@@ -186,7 +187,7 @@
         </div>
     </div>
     <div class="section-back">
-        <div class="section">
+        <div class="section" id="resume">
             <h1>My skills and expertise</h1>
             <div class="little-divisor"></div>
             <h2>I am a kid with a passion for Computer Science</h2>
@@ -225,6 +226,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Picture Modal -->
+    <div id="pictureModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
     </div>
 </body>
 </html>

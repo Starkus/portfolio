@@ -13,17 +13,36 @@ h1 {
 }
 
 .header {
-    background: url(./images/main-header.png) no-repeat center center;
-    background-size: cover;
+    /*background: url(./images/main-header.png) no-repeat center center;*/
+    /*background-color: #222;*/
+    background-color: rgba(30, 30, 30, 0.5);
+
     color: white;
     font-family: 'Open Sans', sans-serif;
-    padding-top: 160px;
+    height: 500px;
+}
+
+#header-back {
+    background: url(http://demo.mutationmedia.net/BOUNCEVCARD/V1/images/profileImages/profileLarge.jpg) no-repeat center center;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+    will-change: transform;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 50pt;
+    font-size: 46pt;
     text-align: center;
+    letter-spacing: -2pt;
+    /* Parallax */
+    position: fixed;
+    top: 200px;
+    left: 5%;
+    right: 5%;
+    will-change: transform;
 }
 
 .header h3 {
@@ -31,12 +50,26 @@ h1 {
     font-size: 11pt;
     -webkit-text-stroke: 0.30px;
     text-align: center;
+    margin: 0;
+    /* Parallax */
+    position: fixed;
+    top: 270px;
+    left: 5%;
+    right: 5%;
+    will-change: transform;
 }
 
 #main-navbar {
+    /* Measure from outer size */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 100%;
     display: -webkit-flex;
     display: flex;
-    margin-top: 130px;
+    top: 417px;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 30px;
 }
@@ -77,11 +110,16 @@ h1 {
 
 .about > span {
     flex: 1;
-    padding: 40px;
+    padding: 100px 35px 100px 35px;
 }
 
 #about-left {
     background-color: rgb(74, 194, 190);
+}
+
+#about-left > div {
+    width: 450px;
+    margin-left: auto;
 }
 
 #about-right {
@@ -92,6 +130,11 @@ h1 {
     align-items: center;
     -webket-justify-content: center;
     justify-content: left;
+}
+
+#about-right > div {
+    width: 450px;
+    margin-right: auto;
 }
 
 .about h1 {
@@ -121,12 +164,19 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     max-width: 700px;
     margin: 0 auto 0 auto;
+    padding-top: 60px;
+}
+
+.section-back {
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    z-index: -10;
 }
 
 .section h1 {
     text-align: center;
     font-size: 18pt;
-    padding-top: 80px;
 }
 
 .little-divisor {

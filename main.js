@@ -10,6 +10,23 @@ function expandNavBar() {
     }
 }
 
+function fixNavBar() {
+    var header = document.querySelector('.header');
+    var bar = document.querySelector('.main-navbar.desktop');
+    
+    $(window).scroll(function() {
+        var bottom = header.getBoundingClientRect().bottom;
+        console.log(bottom);
+
+        if (bottom < 40) {
+            bar.classList.add('fixed');
+        }
+        else {
+            bar.classList.remove('fixed');
+        }
+    });
+}
+
 $.fn.moveIt = function() {
     var $window = $(window);
     var instances = [];
@@ -88,6 +105,8 @@ var setUpModal = function() {
 
 $(document).ready(function() {
     $('[data-scroll-speed]').moveIt();
+
+    fixNavBar();
 
     setUpModal();
 });

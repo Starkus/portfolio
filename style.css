@@ -14,6 +14,11 @@ h1 {
     letter-spacing: -1px;
 }
 
+a:link, a:visited {
+    text-decoration: none;
+    color: unset;
+}
+
 .header {
     /*background: url(./images/main-header.png) no-repeat center center;*/
     /*background-color: #222;*/
@@ -64,6 +69,10 @@ h1 {
     padding: 30px;
 }
 
+.main-navbar a {
+    text-shadow: rgba(27, 27, 27, 0.2) 2px 3px 4px;
+}
+
 .main-navbar span {
     -webkit-flex: none;
     flex: none;
@@ -76,6 +85,22 @@ h1 {
 
 .main-navbar li {
     cursor: pointer;
+}
+
+/* Fixed nav bar */
+.main-navbar.fixed {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.171);
+    z-index: 1;
+}
+
+.main-navbar.fixed a {
+    color: black;
+    text-shadow: initial;
+    -webkit-text-stroke: initial;
 }
 
 /* Mobile nav bar */
@@ -197,7 +222,7 @@ h1 {
 }
 
 #about-right > span {
-    flex: none;
+    flex: initial;
 }
 
 .about ul {
@@ -300,6 +325,7 @@ h1 {
     text-align: center;
     background-color: #222;
     font-size: 8pt;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.466);
 }
 
 #footer div {
@@ -322,6 +348,11 @@ h1 {
     border-color: #555;
     border-radius: 5px;
     margin: 6px;
+}
+
+iframe {
+    display: block;
+    margin: 15px auto 15px auto;
 }
 
 

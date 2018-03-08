@@ -41,8 +41,8 @@
             <span>
                 <ul>
                     <li class="li-right"><a onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'});">Resume</a></li>
-                    <li class="li-right"><a>Blog</a></li>
-                    <li class="li-right"><a>Contact</a></li>
+                    <li class="li-right"><a onclick="document.getElementById('arduino').scrollIntoView({behavior: 'smooth'});">Arduino</a></li>
+                    <li class="li-right"><a onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</a></li>
                 </ul>
             </span>
         </div>
@@ -53,8 +53,8 @@
                     <li><a onclick="document.getElementById('gamedev').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Gamedev</a></li>
                     <li><a onclick="document.getElementById('renders').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Renders</a></li>
                     <li class="li-right"><a onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Resume</a></li>
-                    <li class="li-right"><a>Blog</a></li>
-                    <li class="li-right"><a>Contact</a></li>
+                    <li class="li-right"><a onclick="document.getElementById('arduino').scrollIntoView({behavior: 'smooth'});">Arduino</a></li>
+                    <li class="li-right"><a onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</a></li>
                 </ul>
         </div>
     </div>
@@ -108,7 +108,7 @@
                 <span class="hex-row-fill"></span>
                 <span class="half-hex"></span>
                 <!-- Office -->
-                <div class="hex" data-image="https://i.imgur.com/orsIHiI.jpg">
+                <div class="hex" data-image="https://i.imgur.com/orsIHiI.jpg" data-caption="Interior render made using Blender Cycles">
                     <div class="hex-1">
                         <div class="hex-2" style="background-image: url(https://i.imgur.com/JDDC01j.jpg);"></div>
                     </div>
@@ -271,7 +271,86 @@
             </div>
         </div>
     </div>
-    <div id="footer">
+    <div class="section-back alt1">
+            <div class="section alt1" id="arduino">
+                <h1>Arduino Graphing Calculator</h1>
+                <div class="little-divisor"></div>
+                <h2><i>Couldn't you just buy one?</i></h2>
+                <img style="width: 100%;" src="https://i.imgur.com/JWjD0Jh.jpg">
+                <iframe style="width: 100%" src="https://www.youtube.com/embed/KsnkguX20EE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p>
+                        <img style="width: 40%; float:left;" src="https://i.imgur.com/p89SEGO.jpg">
+                        So I had this seriously old Casio graphing calculator that was
+                    starting to die, with dead pixel columns and what not.
+                    I live in Argentina where electronic devices are really
+                    expensive so I couldn't afford a new one, so I eventually
+                    got the great idea of taking it's keypad and hook it up to
+                    an Arduino and start playing around.
+                </p>
+                <p>
+                        After some experimenting and research I figured out that
+                    it works just like this 4x4 matrix keypad that comes with your
+                    Arduino UNO bundle, so I mapped out the keys and began soldering
+                    the pins.
+                </p>
+                <p>
+                    <img style="width: 40%; float:right;" src="https://i.imgur.com/id3r7qn.jpg">
+                        It consists of two Arduinos that communicate with each other:
+                    a basic Pro Mini that manages the keypad and power functions, and
+                    a big fat Due which parses the expressions and renders the 3.5"
+                    TFT screen. Behind it lies a conventional lithium power bank that
+                    powers up the whole device.
+                </p>
+                <p>
+                        The Arduino Pro Mini receives power continuously, but when
+                    turned off it shuts the Due and the screen off with an N-Mosfet
+                    and puts itself to sleep in order to save power (it consumes so
+                    little the power bank switches off, I'm working on that...) and
+                    a hardware interrupt in the On button on the keypad turns on the
+                    whole thing again.
+                </p>
+                <p>
+                        One thing I think is pretty interesting is the way the parsed
+                    expression is stored for repetitive use. At first, to graph a
+                    function, I would just parse the input string for every pixel,
+                    genius! Until I came up with an "Operation tree", whose nodes are
+                    Nodes which can have zero to two arguments and have an Execute
+                    function. Arguments would be more Node instances, so the tree
+                    branches end at zero argument nodes, or constants. This way, to
+                    graph a function I just call Execute() on the root node of the
+                    operation tree.
+                </p>
+                <p>
+                        The input is very responsive even though the old calculator
+                    keypad is already giving up.
+                </p>
+                <p>
+                        Current features include expression parsing, featuring most
+                    math functions in cmath.h like floor, pow, etc., function graphing
+                    and basic navigation through the graph.
+                </p>
+            </div>
+        </div>
+        <div class="section-back">
+            <div class="section" id="contact">
+                <h1>Contact</h1>
+                <div class="little-divisor"></div>
+                <h2>Drop a hi in my inbox!</h2>
+                <form method="POST" action="contact.php">
+                    <div id="name-email">
+                    <input type="text" id="name" name="name" placeholder="Name">
+
+                    <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                    
+                    <textarea id="body" name="body" style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    <div id="footer" style="clear:both;">
         <div style="background-color: rgba(255, 255, 255, 0.03);">
             <ul>
                 <li><i class="fab fa-twitter"></i></li>
@@ -287,8 +366,10 @@
     <!-- Picture Modal -->
     <div id="pictureModal" class="modal">
         <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
+        <div>
+            <img class="modal-content" id="img01">
+            <div class="caption"></div>
+        </div>
     </div>
 </body>
 </html>

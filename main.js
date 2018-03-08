@@ -79,21 +79,25 @@ var setUpModal = function() {
     var modal = $('#pictureModal')[0];
 
     var modalImg = $('#img01');
-    var captionText = $('.caption');
+    var captionText = $('.modal .caption');
     var closeBtn = $('#pictureModal > .close')[0];
 
-    closeBtn.onclick = () => {
+    modal.onclick = closeBtn.onclick = () => {
         modal.style.display = "none";
     }
+
+    modalImg.click((e) => {
+        e.stopPropagation();
+    });
 
 
     /* Hex tiles events */
     for (var hex of document.querySelectorAll('.hex')) {
         /* On click, open modal */
         hex.onclick = function() {
-            modal.style.display = "block";
+            modal.style.display = "table";
             modalImg.attr("src", this.dataset.image);
-            console.log(this.dataset.image);
+            captionText.html(this.dataset.caption);
         }
     }
 

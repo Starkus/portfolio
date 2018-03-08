@@ -278,8 +278,17 @@ a:link, a:visited {
     margin-top: 70px;
 }
 
+.section p {
+    font-size: 14px;
+    color: #333;
+}
+
+.section p img {
+    margin: 10px;
+}
+
 .section-back.alt1 {
-    background-color: #dd878c;
+    background-color: #414349;
 }
 
 .section.alt1 {
@@ -287,6 +296,10 @@ a:link, a:visited {
 }
 
 .section.alt1 h2 {
+    color: #eee;
+}
+
+.section.alt1 p {
     color: #eee;
 }
 
@@ -359,6 +372,51 @@ iframe {
     height: 45vw;
     max-width: 800px;
     max-height: 450px;
+}
+
+
+/* Contact form */
+form {
+    text-align: right;
+}
+
+input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+}
+
+input[type=text], select, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border-style: none;
+    background-color: #f5f5f5;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: rgb(228, 115, 115);
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 700px) {
+    #name-email {
+        display: flex;
+    }
+    #name, #email {
+        flex: 1;
+    }
+    #name {
+        margin-right: 11px;
+    }
+    #email {
+        margin-left: 11px;
+    }
 }
 
 

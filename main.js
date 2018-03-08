@@ -1,3 +1,15 @@
+function expandNavBar() {
+    const expandedClass = "expanded";
+    var bar = document.querySelector('.main-navbar.mobile');
+
+    if (!bar.classList.contains(expandedClass)) {
+        bar.classList.add(expandedClass);
+    }
+    else {
+        bar.classList.remove(expandedClass);
+    }
+}
+
 $.fn.moveIt = function() {
     var $window = $(window);
     var instances = [];

@@ -20,7 +20,7 @@
         <div id="header-back" data-scroll-speed="6"></div>
         <h1>Emiliano Senega</h1>
         <h3>Master Learner</h3>
-        <div id="main-navbar">
+        <div class="main-navbar desktop">
             <span>
                 <ul>
                     <li>Home</li>
@@ -30,11 +30,11 @@
             </span>
             <span class="separator"></span>
             <span>
-                <ul>
-                    <li class="hide-mobile"><i class="fab fa-twitter"></i></li>
-                    <li class="hide-mobile"><i class="fab fa-facebook-f"></i></li>
-                    <li class="hide-mobile"><i class="fab fa-youtube"></i></li>
-                    <li class="hide-mobile"><i class="fab fa-github"></i></li>
+                <ul class="hide-mobile">
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-youtube"></i></li>
+                    <li><i class="fab fa-github"></i></li>
                 </ul>
             </span>
             <span class="separator"></span>
@@ -45,6 +45,17 @@
                     <li class="li-right">Contact</li>
                 </ul>
             </span>
+        </div>
+        <div class="main-navbar mobile">
+                <ul>
+                    <a class="navbar-button" onclick="expandNavBar();">&#9776;</a>
+                    <li><a>Home</a></li>
+                    <li><a onclick="document.getElementById('gamedev').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Gamedev</a></li>
+                    <li><a onclick="document.getElementById('renders').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Renders</a></li>
+                    <li class="li-right"><a onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'}); expandNavBar();">Resume</a></li>
+                    <li class="li-right"><a>Blog</a></li>
+                    <li class="li-right"><a>Contact</a></li>
+                </ul>
         </div>
     </div>
     <div class="about">

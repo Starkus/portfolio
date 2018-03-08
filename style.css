@@ -5,6 +5,7 @@ body {
 
 body ul {
     list-style: none;
+    margin: 0;
 }
 
 h1 {
@@ -48,7 +49,7 @@ h1 {
     margin: 0;
 }
 
-#main-navbar {
+.main-navbar {
     /* Measure from outer size */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -63,18 +64,66 @@ h1 {
     padding: 30px;
 }
 
-#main-navbar span {
+.main-navbar span {
     -webkit-flex: none;
     flex: none;
 }
 
-#main-navbar span.separator {
+.main-navbar span.separator {
     -webkit-flex: 1;
     flex: 1;
 }
 
-#main-navbar li {
+.main-navbar li {
     cursor: pointer;
+}
+
+/* Mobile nav bar */
+.main-navbar.mobile {
+    background-color: transparent;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    color: #333;
+}
+
+.main-navbar.mobile.expanded {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-navbar.mobile ul {
+    width: 100%;
+    padding: 0;
+}
+
+.main-navbar.mobile li {
+    display: none;
+}
+
+.main-navbar.mobile.expanded li {
+    display: block;
+    padding: 0;
+}
+
+.main-navbar.mobile.expanded li > a {
+    display: inline-block;
+    padding: 15px;
+    padding-left: 25px;
+    width: 100%;
+}
+
+.navbar-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    float: right;
+    cursor: pointer;
+    padding: 10px;
+    width: 22px;
+    text-align: center;
+}
+
+.main-navbar.mobile.expanded .navbar-button {
+    background-color: transparent;
 }
 
 .header ul {
@@ -276,6 +325,12 @@ h1 {
 }
 
 
+@media (min-width: 900px) {
+    .only-mobile {
+        display: none !important;
+    }
+}
+
 @media (max-width: 900px) {
     .hide-mobile {
         display: none !important;
@@ -300,5 +355,18 @@ h1 {
     #about-right ul {
         padding: 0;
         margin: 0;
+    }
+}
+
+/* Nav bar */
+
+@media (min-width: 700px) {
+    .main-navbar.mobile {
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    .main-navbar.desktop {
+        display: none;
     }
 }

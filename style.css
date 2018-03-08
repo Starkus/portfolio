@@ -353,6 +353,10 @@ a:link, a:visited {
 iframe {
     display: block;
     margin: 15px auto 15px auto;
+    width: 80vw;
+    height: 45vw;
+    max-width: 800px;
+    max-height: 450px;
 }
 
 

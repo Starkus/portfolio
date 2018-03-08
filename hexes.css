@@ -1,15 +1,17 @@
-.hex {
+.hex, .half-hex {
     display: inline-block;
     flex: none;
     visibility: hidden;
     overflow: hidden;
     width: 160px;
     height: 200px;
+    margin: -25px 7px -24px 7px;
+}
+.hex {
     -webkit-transform: rotate(120deg);
        -moz-transform: rotate(120deg);
         -ms-transform: rotate(120deg);
             transform: rotate(120deg);
-    margin: -21px 10px -22px 10px;
     cursor: pointer;
 }
 /*
@@ -37,7 +39,7 @@
 .hex-2 {
     background-color: #cc7777;
     background-position: 50%;
-    background-size: auto 100%;
+    background-size: contain;
     background-repeat: no-repeat;
     visibility: visible;
     width: 100%;
@@ -55,4 +57,20 @@
 
 .hex-row-fill {
     flex: 1;
+}
+
+.half-hex {
+    width: 80px;
+}
+
+
+@media (max-width: 800px) {
+    .hex, .half-hex {
+        width: 20vw;
+        height: 25vw;
+        margin: -3vw 1vw -3vw 1vw;
+    }
+    .half-hex {
+        width: 10vw;
+    }
 }

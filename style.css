@@ -64,11 +64,16 @@ a:link, a:visited {
 
     position: absolute;
     width: 100%;
-    display: -webkit-flex;
-    display: flex;
     top: 417px;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 30px;
+}
+
+.main-navbar > div {
+    max-width: 900px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
 }
 
 .main-navbar a {

@@ -95,6 +95,9 @@ var setUpModal = function() {
     for (var hex of document.querySelectorAll('.hex')) {
         /* On click, open modal */
         hex.onclick = function() {
+			modalImg.attr("src", "");
+            captionText.html("");
+			
             modal.style.display = "table";
             modalImg.attr("src", this.dataset.image);
             captionText.html(this.dataset.caption);

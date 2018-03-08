@@ -16,13 +16,34 @@ function fixNavBar() {
     
     $(window).scroll(function() {
         var bottom = header.getBoundingClientRect().bottom;
-        console.log(bottom);
+        //console.log(bottom);
 
         if (bottom < 40) {
             bar.classList.add('fixed');
         }
         else {
             bar.classList.remove('fixed');
+        }
+    });
+}
+
+function slickTitles() {
+    $(window).scroll(function() {
+        for (var h1 of $('.section h1')) {
+            var parent = h1.parentElement;
+            const winHeight = $(window).height();
+            var top = parent.getBoundingClientRect().top;
+            //console.log(top);
+
+            var perc = 1 - top / winHeight;
+            //console.log(perc);
+
+            if (-0.1 > perc || perc > 1.1) {
+                continue;
+            }
+
+            h1.style.opacity = perc * 3.0;
+            h1.style.top = '' + 1.0 / (5 * perc + 1) * -60.0 + 'px';
         }
     });
 }
@@ -107,6 +128,7 @@ $(document).ready(function() {
     $('[data-scroll-speed]').moveIt();
 
     fixNavBar();
+    slickTitles();
 
     setUpModal();
 });

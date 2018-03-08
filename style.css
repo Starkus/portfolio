@@ -12,6 +12,8 @@ h1 {
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
     letter-spacing: -1px;
+    will-change: transform;
+    position: relative;
 }
 
 a:link, a:visited {

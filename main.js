@@ -27,23 +27,25 @@ function fixNavBar() {
     });
 }
 
-function slickTitles() {
-    $(window).scroll(function() {
-        for (var h1 of $('.section h1')) {
-            var parent = h1.parentElement;
-            const winHeight = $(window).height();
-            var top = parent.getBoundingClientRect().top;
-            //console.log(top);
+var initTops = [];
 
+function slickTitles() {
+    for (var h1 of $('.fadein')) {
+        //h1.data('fadein')
+    }
+
+    $(window).scroll(function() {
+        for (var h1 of $('.fadein')) {
+            const winHeight = $(window).height();
+            var top = h1.getBoundingClientRect().top;
             var perc = 1 - top / winHeight;
-            //console.log(perc);
 
             if (-0.1 > perc || perc > 1.1) {
                 continue;
             }
 
-            h1.style.opacity = perc * 3.0;
-            h1.style.top = '' + 1.0 / (5 * perc + 1) * -60.0 + 'px';
+            h1.style.opacity = perc * 3.0 - 0.35;
+            h1.style.top = '' + 1.0 / (5 * perc + 1) * -120.0 + 'px';
         }
     });
 }

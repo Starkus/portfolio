@@ -270,7 +270,7 @@ a:link, a:visited {
 .section h2 {
     font-weight: 300;
     color: #aaa;
-    margin: 70px;
+    margin: 70px 0;
     text-align: center;
 }
 
@@ -292,6 +292,26 @@ a:link, a:visited {
     margin: 10px;
 }
 
+
+/* Section alts */
+
+.section.fullwidth {
+    width: 100%;
+    max-width: unset;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section.fullwidth h2 {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.section.centered {
+    text-align: center;
+}
+
+
 .section-back.alt1 {
     background-color: #414349;
 }
@@ -311,6 +331,7 @@ a:link, a:visited {
 .section.alt1 .little-divisor {
     background-color: white;
 }
+
 
 .skill-bar {
     text-transform: uppercase;
@@ -469,4 +490,9 @@ input[type=submit] {
     .main-navbar.desktop {
         display: none;
     }
+}
+
+/* Animation and script related */
+.fadein {
+    position: relative;
 }
